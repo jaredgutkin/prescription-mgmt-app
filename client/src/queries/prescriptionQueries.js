@@ -9,6 +9,18 @@ const GET_PRESCRIPTIONS = gql`
             prescriptionQuanity
           }
     }
-`
+`;
 
-export { GET_PRESCRIPTIONS }
+const GET_PRESCRIPTION = gql`
+    query getPrescription($id: ID!) {
+       prescription(id: $id) {
+            id
+            name
+            frequency
+            time
+            prescriptionQuanity
+          }
+    }
+`;
+
+export { GET_PRESCRIPTION, GET_PRESCRIPTIONS }

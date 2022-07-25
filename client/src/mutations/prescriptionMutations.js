@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 const ADD_PRESCRIPTION = gql`
-    mutation addPrescription($name: String!, $frequency: String!, $time: String!, $prescriptionQuanity: Number!){
+    mutation addPrescription($name: String!, $frequency: String!, $time: String!, $prescriptionQuanity: String!){
         addPrescription(name: $name, frequency: $frequency, time: $time, prescriptionQuanity: $prescriptionQuanity){
             id
             name
