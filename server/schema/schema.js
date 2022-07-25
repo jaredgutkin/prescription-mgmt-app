@@ -43,3 +43,45 @@ const RootQuery = new GraphQLObjectType({
         }
     }
 })
+
+//Mutations
+const mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        //Add Prescription
+        addPrescription: {
+            type: PrescriptionType,
+            args: {
+                name: { type: GraphQLNonNull(GraphQLString)},
+                frequency: { type: GraphQLNonNull(GraphQLString) },
+                time: { type: GraphQLNonNull(GraphQLString)},
+                prescriptionQuanity: { type: GraphQLNonNull(GraphQLInt)}
+            },
+            resolve(parent, args) {
+                const prescription = new Prescription({
+                    name: args.name,
+                    frequency: args.frequency,
+                    time: args.time,
+                    prescriptionQuanity: args.prescriptionQuanity,
+                })
+
+                return prescription.save()
+            }
+        },
+        //Delete Prescription
+        deletePrescription: {
+            type: PrescriptionType,
+            args: {
+                id: { type: GraphQLNonNull(GraphQLID)}
+            },
+            resolve(parent, args) {
+                return Prescription.findByIdAndRemove(args.id)
+            }
+        },
+    }
+})
+
+module.exports = new GraphQLSchema({
+    query: RootQuery,
+    mutation,
+})
