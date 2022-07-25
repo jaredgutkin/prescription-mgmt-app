@@ -13,7 +13,7 @@ export default function AddPrescriptionModal() {
 
     const [addPrescription] = useMutation(ADD_PRESCRIPTION, {
         variables: {name, frequency, time, prescriptionQuanity},
-        update(cache, {data: {addPrescription}}){
+        update(cache, { data: {addPrescription} }){
             const {prescriptions} = cache.readQuery({query: GET_PRESCRIPTIONS})
             cache.writeQuery({
                 query: GET_PRESCRIPTIONS,

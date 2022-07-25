@@ -11,7 +11,7 @@ const PrescriptionSchema = new mongoose.Schema({
         type: String,
     },
     prescriptionQuanity: {
-        type: Number,
+        type: String,
     }
 })
 

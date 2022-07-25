@@ -20,7 +20,7 @@ const PrescriptionType = new GraphQLObjectType({
         name: { type: GraphQLString},
         frequency: { type: GraphQLString },
         time: { type: GraphQLString},
-        prescriptionQuanity: { type: GraphQLInt}
+        prescriptionQuanity: { type: GraphQLString}
 
     }),
 })
@@ -55,7 +55,7 @@ const mutation = new GraphQLObjectType({
                 name: { type: GraphQLNonNull(GraphQLString)},
                 frequency: { type: GraphQLNonNull(GraphQLString) },
                 time: { type: GraphQLNonNull(GraphQLString)},
-                prescriptionQuanity: { type: GraphQLNonNull(GraphQLInt)}
+                prescriptionQuanity: { type: GraphQLNonNull(GraphQLString)}
             },
             resolve(parent, args) {
                 const prescription = new Prescription({

@@ -2,13 +2,14 @@ import React from 'react'
 import AddPrescriptionModal from '../components/AddPrescriptionModal'
 import Prescriptions from '../components/Prescriptions'
 
-export const Home = () => {
+export default function Home() {
   return (
     <>
-    <div className="d-flex gap-3 mb-4">
-        <AddPrescriptionModal />
-    </div>
-    <Prescriptions />
+        <div className="d-flex gap-3 mb-4">
+            <AddPrescriptionModal />
+        </div>
+        <Prescriptions />
     </>
   )
 }
+
