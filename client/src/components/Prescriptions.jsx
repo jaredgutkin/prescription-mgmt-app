@@ -17,7 +17,7 @@ export default function Prescriptions() {
                     <th>Name</th>
                     <th>Frequency</th>
                     <th>Time</th>
-                    <th>Prescrption Quanity</th>
+                    <th>Prescription Quanity</th>
                     <th></th>
                 </tr>
             </thead>
