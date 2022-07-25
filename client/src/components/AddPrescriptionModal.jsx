@@ -87,7 +87,7 @@ export default function AddPrescriptionModal() {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Time</label>
-                    <input type="text" className="form-control" id="time" value={time} onChange={ (e) => setTime(e.target.value)} />
+                    <input type="time" className="form-control" id="time" value={time} onChange={ (e) => setTime(e.target.value)} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Pills Remaining</label>
