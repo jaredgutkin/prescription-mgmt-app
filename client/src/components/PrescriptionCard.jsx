@@ -6,7 +6,7 @@ export default function PrescriptionCard({prescription}) {
                   <div className="d-flex justify-content-between align-items-center">
                       <h5 className="card-title">{prescription.name}</h5>
   
-                      <a className="btn btn-light" href={`/prescription/${prescription.id}`}>View</a>
+                      <a className="btn btn-light" href={`/prescriptions/${prescription.id}`}>View</a>
   
   
                   </div>

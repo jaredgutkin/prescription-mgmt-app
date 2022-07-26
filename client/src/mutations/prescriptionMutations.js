@@ -22,5 +22,29 @@ const DELETE_PRESCRIPTION = gql`
         }
     }
 `;
+//Update Prescription
+const UPDATE_PRESCRIPTION = gql`
+  mutation UpdatePrescription(
+    $id: ID!
+    $name: String!
+    $frequency: String!
+    $time: String!
+    $prescriptionQuanity: String!
+  ) {
+    UpdatePrescription(
+      id: $id
+      name: $name
+      frequency: $frequency
+      time: $time
+      prescriptionQuanity: $prescriptionQuanity
+    ) {
+      id
+      name
+      frequency
+      time
+      prescriptionQuanity
+    }
+  }
+`;
 
-export { ADD_PRESCRIPTION, DELETE_PRESCRIPTION }
+export { ADD_PRESCRIPTION, DELETE_PRESCRIPTION, UPDATE_PRESCRIPTION }
