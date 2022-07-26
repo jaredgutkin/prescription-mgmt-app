@@ -2,6 +2,7 @@ import { Link, useParams} from 'react-router-dom';
 import Spinner from '../components/Spinner';
 import { useQuery } from '@apollo/client';
 import { GET_PRESCRIPTION } from '../queries/prescriptionQueries';
+import EditPrescriptionForm from '../components/EditPrescriptionForm';
 
 export default function Prescription() {
     const { id } = useParams();
@@ -23,6 +24,8 @@ export default function Prescription() {
 
                 <h5 className="mt-3">Pills Left</h5>
                 <p className="lead">{data.prescription.prescriptionQuanity}</p>
+
+                <EditPrescriptionForm prescription={data.prescription} />
 
             </div>
         )}
